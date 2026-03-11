@@ -1,4 +1,5 @@
-# SQL Daily Practice - Day02
+-- SQL Daily Practice
+-- Date: 2026-03-11
 
 ## Problem 1. 고객별 총 주문 금액 구하기
 
@@ -40,7 +41,7 @@ FROM customers c
 JOIN orders o
 USING (customer_id)
 GROUP BY customer_id;
-
+```
 
 ### Solution
 
@@ -95,7 +96,7 @@ FROM customers c
 LEFT JOIN orders o
 USING (customner_id)
 GROUP BY name;
-
+```
 
 ### Solution
 
@@ -147,6 +148,7 @@ FROM customers c
 LEFT JOIN orders o
 ON c.customer_id = o.customer_id AND COUNT(order_id) ISNULL
 GROUP BY name;
+```
 
 ### Solution
 
