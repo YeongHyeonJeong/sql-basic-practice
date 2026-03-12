@@ -1,5 +1,4 @@
 -- HR schema practice
--- Date: 2026-03-10
 
 -- average salary by job
 SELECT job_id, AVG(salary)

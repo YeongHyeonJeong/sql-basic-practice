@@ -1,5 +1,4 @@
 -- SQL Daily Practice
--- Date: 2026-03-11
 
 ## Problem 1. 고객별 총 주문 금액 구하기
 
