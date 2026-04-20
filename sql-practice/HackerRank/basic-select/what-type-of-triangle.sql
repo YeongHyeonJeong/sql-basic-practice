@@ -1,20 +1,20 @@
 -- HackerRank SQL Practice
 
--- problem: Qyery triangle table using its three side lengths.
--- Link: https://www.hackerrank.com/challenges/what-type-of-triangle/problem
+-- problem: The Blunder(average salary error
+-- Link: https://www.hackerrank.com/challenges/the-blunder/problem
 
 
 -- My Answer
 
-SELECT 
-CASE 
-     WHEN NOT (A+B>C AND B+C>A AND A+C>B) THEN 'Not A Triangle'
-     WHEN A=B AND B=C THEN 'Equilateral'
-     WHEN A=B OR B=C OR A=C THEN 'Isosceles'
-     ELSE 'Scalene'
-END
-FROM TRIANGLES;
+SELECT CEIL(
+    AVG(SALARY) - AVG(
+        CAST(NULLIF(REPLACE(SALARY, '0', ''), '') AS UNSIGNED)
+    )
+)
+FROM EMPLOYEES;
 
 -- Note 
-두 관계를 한 문장으로 나타낼 수 없음. 
-A=B=C (X)
+문자열 함수 사용으로 연산불가 -> CAST사용
+0제거시 빈 문자열 발생 가능->
+MYSQL에서 CAST(AS INT) 불가
+CAST(AS SIGNED/UNSIGNED)사용
